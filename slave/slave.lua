@@ -39,6 +39,7 @@ end
 
 local registration = Registration:new()
 registration.computerID =  os.computerID()
+registration.reactors = {}
 
 for i, r in ipairs(REACTORS) do
    local reactor = Reactor:new()
@@ -48,6 +49,7 @@ for i, r in ipairs(REACTORS) do
    reactor.batteryCapacity = r.battery().capacity()
    reactor.fuelCapacity = r.fuelTank().capacity()
    registration.reactors[i] = reactor
+   pretty.pretty_print(registration)
 end
 
 pretty.pretty_print(registration)

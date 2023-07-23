@@ -18,7 +18,7 @@ if next(REACTORS) == nil then
    return
 end
 
-print("got ".. REACTORS.getn() .. " reactors")
+print("got ".. #REACTORS .. " reactors")
 
 OPEN_REDNET()
 

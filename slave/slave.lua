@@ -1,7 +1,7 @@
-require("../protocol/ReactorUpdate")
-require("../protocol/registration")
-require("../protocol/reactor")
-require("../util/rednet")
+require("..\\protocol\\ReactorUpdate")
+require("..\\protocol\\registration")
+require("..\\protocol\\reactor")
+require("..\\util\\rednet")
 local args = { ... }
 MASTER_ID = args[1]
 

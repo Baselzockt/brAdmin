@@ -28,3 +28,4 @@ setAllControlRodLevels(int level)
     returns nil
 stackTemperatre()
     returns the stack temperature in kelvin as float
+    how to get reactor: peripheral.find("BiggerReactors_Reactor")

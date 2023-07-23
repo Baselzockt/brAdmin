@@ -3,7 +3,7 @@
 Reactor = {
     reactorId = "",
     maxRfPerTick = 0,
-    controllRodCount = 0,
+    controlRodCount = 0,
     batteryCapacity = 0,
     fuelCapacity = 0
 }
@@ -15,7 +15,7 @@ function Reactor:new()
     self.__index = self
     self.reactorId = nil
     self.maxRfPerTick = 0
-    self.controllRodCount = 0
+    self.controlRodCount = 0
     self.batteryCapacity = 0
     self.fuelCapacity = 0
     return o

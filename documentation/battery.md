@@ -1,4 +1,4 @@
-capacity()
+        capacity()
             returns internal energy storrage capacity as int
         producedLastTick()
             returns fe produced last tick as int 

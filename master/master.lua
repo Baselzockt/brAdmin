@@ -1,8 +1,8 @@
-package.path = ";../../?.lua" .. package.path
-require("protocol.ReactorUpdate")
-require("protocol.registration")
-require("protocol.reactor")
-require("util.rednet")
+package.path = ";../protocol/?.lua;../util/?.lua" .. package.path
+require("ReactorUpdate")
+require("registration")
+require("reactor")
+require("rednet")
 local pretty = require "cc.pretty"
 local args = { ... }
 MASTER_ID = args[1]

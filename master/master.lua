@@ -14,11 +14,11 @@ if MASTER_ID == nil then
 
  OPEN_REDNET()
 
- rednet.host("brAdmin.master."+MASTER_ID, MASTER_ID)
+ rednet.host("brAdmin.master." .. MASTER_ID, MASTER_ID)
 
  local listenForRegistration = function ()
     while true do
-        REGISTRATION = { rednet.receive("brAdmin."+MASTER_ID+".registration") }
+        REGISTRATION = { rednet.receive("brAdmin." .. MASTER_ID .. ".registration") }
         print("Received registration")
         pretty.pretty_print(REGISTRATION)
     end

@@ -18,7 +18,7 @@ if next(REACTORS) == nil then
    return
 end
 
-print("got "+ REACTORS.getn() + " reactors")
+print("got ".. REACTORS.getn() .. " reactors")
 
 OPEN_REDNET()
 
@@ -26,8 +26,8 @@ print("connecting to master")
 local computers = {}
 while next(computers) == nil do
    sleep(5)
-   computers = {rednet.lookup("brAdmin.master."+MASTER_ID)}
-end
+   computers = {rednet.lookup("brAdmin.master." .. MASTER_ID)}
+end 
 
 print("got master server")
 MASTER = computers[1]
@@ -41,7 +41,7 @@ registration.computerID =  os.computerID()
 
 for i, r in ipairs(REACTORS) do
    local reactor = Reactor:new()
-   reactor.reactorId = os.computerID() + "." + i
+   reactor.reactorId = os.computerID() .. "." .. i
    reactor.maxRfPerTick = 1000 --todo: calculate max RF per tick
    reactor.controlRodCount = r.controlRodCount()
    reactor.batteryCapacity = r.battery().capacity()
@@ -49,14 +49,14 @@ for i, r in ipairs(REACTORS) do
    registration.reactors.insert(reactor)
 end
 
-rednet.send(MASTER, registration ,"brAdmin."+MASTER_ID+".registration")
+rednet.send(MASTER, registration ,"brAdmin.".. MASTER_ID ..".registration")
 
 ---@type ReactorSettings
-SETTINGS = { rednet.receive("brAdmin."+MASTER_ID+".settings") }
+SETTINGS = { rednet.receive("brAdmin.".. MASTER_ID ..".settings") }
 
 local listenForSettingsUpdates = function ()
    while true do
-      SETTINGS = { rednet.receive("brAdmin."+MASTER_ID+".settings") }
+      SETTINGS = { rednet.receive("brAdmin.".. MASTER_ID ..".settings") }
       print("Received settings update")
    end
 end

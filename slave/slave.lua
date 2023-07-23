@@ -1,4 +1,4 @@
-package.path = ";../protocol/?.lua;../util/?.lua" .. package.path
+package.path = ";../protocol/?.lua;../util/?.lua;" .. package.path
 require("ReactorUpdate")
 require("registration")
 require("reactor")

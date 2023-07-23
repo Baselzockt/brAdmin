@@ -3,6 +3,7 @@ require("ReactorUpdate")
 require("registration")
 require("reactor")
 require("rednet")
+local pretty = require "cc.pretty"
 local args = { ... }
 MASTER_ID = args[1]
 
@@ -49,6 +50,7 @@ for i, r in ipairs(REACTORS) do
    registration.reactors[i] = reactor
 end
 
+pretty.pretty_print(registration)
 rednet.send(MASTER, registration ,"brAdmin.".. MASTER_ID ..".registration")
 
 ---@type ReactorSettings

@@ -3,7 +3,6 @@ require("ReactorUpdate")
 require("registration")
 require("reactor")
 require("rednet")
-local pretty = require "cc.pretty"
 local args = { ... }
 MASTER_ID = args[1]
 
@@ -39,7 +38,7 @@ end
 
 local registration = Registration:new()
 registration.computerID =  os.computerID()
-registration.reactors = {}
+registration.reactors = {} --ffs why
 
 for i, r in ipairs(REACTORS) do
    local reactor = Reactor:new()
@@ -49,10 +48,8 @@ for i, r in ipairs(REACTORS) do
    reactor.batteryCapacity = r.battery().capacity()
    reactor.fuelCapacity = r.fuelTank().capacity()
    registration.reactors[i] = reactor
-   pretty.pretty_print(registration)
 end
 
-pretty.pretty_print(registration)
 rednet.send(MASTER, registration ,"brAdmin.".. MASTER_ID ..".registration")
 
 ---@type ReactorSettings

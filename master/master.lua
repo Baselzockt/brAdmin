@@ -1,3 +1,4 @@
+package.path = ";../?.lua" .. package.path
 require("protocol.ReactorUpdate")
 require("protocol.registration")
 require("protocol.reactor")

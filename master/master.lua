@@ -20,7 +20,7 @@ if MASTER_ID == nil then
     while true do
         REGISTRATION = { rednet.receive("brAdmin." .. MASTER_ID .. ".registration") }
         print("Received registration")
-        pretty.pretty_print(REGISTRATION)
+        pretty.pretty_print(REGISTRATION[2])
     end
  end
 

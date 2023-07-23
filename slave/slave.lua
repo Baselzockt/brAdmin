@@ -46,7 +46,7 @@ for i, r in ipairs(REACTORS) do
    reactor.controlRodCount = r.controlRodCount()
    reactor.batteryCapacity = r.battery().capacity()
    reactor.fuelCapacity = r.fuelTank().capacity()
-   registration.reactors[i](reactor)
+   registration.reactors[i] = reactor
 end
 
 rednet.send(MASTER, registration ,"brAdmin.".. MASTER_ID ..".registration")
